@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio personal de Sebastián Moreno. Explora mis proyectos, artículos y experiencia laboral." />
+  <title>Artículos - Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <header class="nav-dark">
+    <div class="logo">👨‍💻 Sebastián Moreno</div>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html" aria-label="Ir a inicio">Inicio</a>
+      <a href="projects.html" aria-label="Ver proyectos">Proyectos</a>
+      <a href="articles.html" aria-current="page" aria-label="Ver artículos">Artículos</a>
+      <a href="contact.html" aria-label="Contactar">Contacto</a>
+    </nav>
+
+    <div class="theme-toggle" aria-label="Alternar modo oscuro">
+      <input type="checkbox" id="dark-mode-toggle" aria-label="Activar modo oscuro" />
+      <label for="dark-mode-toggle" class="toggle-label">
+        <span class="toggle-ball"></span>
+        <svg class="icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14A9 9 0 0121 12.79z" />
+        </svg>
+      </label>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu" aria-label="Menú móvil">☰</div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+    <a href="index.html" aria-label="Ir a inicio">Inicio</a>
+    <a href="projects.html" aria-label="Ver proyectos">Proyectos</a>
+    <a href="articles.html" aria-current="page" aria-label="Ver artículos">Artículos</a>
+    <a href="contact.html" aria-label="Contactar">Contacto</a>
+  </nav>
+
+  <main>
+    <section class="section-center grid-container">
+      <div class="column">
+        <h2>Experiencia Laboral</h2>
+        <p><strong>Revealapps</strong></p>
+        <p>Encargado de la dirección y ejecución de proyectos frontend, asegurando la integración de soluciones eficientes y visualmente atractivas.</p>
+
+        <h2>Proyectos OpenSource</h2>
+        <p>He sido parte de más de 50 iniciativas open source y he creado mis propios proyectos que han alcanzado más de 200 estrellas en GitHub.</p>
+
+        <a href="https://github.com/Sebas20064406" target="_blank" rel="noopener noreferrer">Visita mi perfil en GitHub</a>
+      </div>
+    </section>
+
+    <section class="section-center change-color">
+      <p>Cambia el fondo a un color aleatorio: <span class="color">#f9fbfc</span></p>
+      <button class="btn-hero" id="btn" aria-label="Cambiar color de fondo">Cambiar Color</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Todos los derechos reservados 2025 · Sebastián Moreno</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

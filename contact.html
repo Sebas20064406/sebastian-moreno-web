@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav-dark">
+  <div class="logo">👨‍💻 Sebastián Moreno 👨‍💻</div>
+  <nav class="desktop-nav">
+    <a href="index.html">Inicio</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="articles.html">Artículos</a>
+    <a href="contact.html" aria-current="page">Contacto</a>
+  </nav>
+  <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú móvil">☰</div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="projects.html">Proyectos</a>
+  <a href="articles.html">Artículos</a>
+  <a href="contact.html">Contacto</a>
+</nav>
+
+<main>
+  <section class="section-center">
+    <h2>Contáctame</h2>
+    <p>¿Tienes una idea, proyecto o simplemente quieres saludar? Completa el formulario y estaré encantado de responderte.</p>
+
+    <div class="form-card">
+      <form id="contact-form">
+        <label for="name">Nombre completo</label>
+        <input type="text" id="name" name="name" placeholder="Ej: Juan Pérez" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Ej: juan@email.com" required />
+
+        <label for="title">Asunto</label>
+        <input type="text" id="title" name="title" placeholder="Motivo del mensaje" />
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit" class="btn-hero">Enviar mensaje</button>
+        <div id="form-message" class="form-feedback" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-center change-color">
+    <span class="color">#f9fbfc</span>
+    <button class="btn-hero" id="btn">Cambiar fondo</button>
+  </section>
+</main>
+
+<footer>
+  <p>© Sebastián Moreno 2025 - Todos los derechos reservados</p>
+</footer>
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function() {
+  emailjs.init("7bzGX3KoSiEyQujpr");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const feedback = document.getElementById("form-message");
+
+  
+  emailjs.sendForm("service_v207u8b", "template_3hanzp7", this)
+    .then(() => {
+      feedback.innerHTML = `✅ <strong>Mensaje enviado correctamente.</strong> ¡Gracias por contactarme!`;
+      feedback.style.color = "#0077cc";
+    }, (error) => {
+      feedback.innerHTML = `❌ <strong>Error al enviar el mensaje.</strong> Por favor intenta nuevamente.`;
+      feedback.style.color = "#cc0000";
+      console.error("EmailJS error:", error);  
+    });
+
+  this.reset();  
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
